@@ -27,7 +27,8 @@ class MentionCog(commands.Cog):
             await thinking_message.edit(content=response_text)
 
         elif message.reference and message.reference.resolved and message.reference.resolved.author == self.bot.user:
-            combined_prompt = f"{message.content}"
+            original_message = message.reference.resolved
+            combined_prompt = f"オリジナルメッセージ: {original_message.content}\それに対する返信: {message.content}"
 
             thinking_message = await message.channel.send("考え中...")
 
