@@ -26,5 +26,18 @@ class MentionCog(commands.Cog):
 
             await thinking_message.edit(content=response_text)
 
+        elif message.reference and message.reference.resolved and message.reference.resolved.author == self.bot.user:
+            combined_prompt = f"{message.content}"
+
+            thinking_message = await message.channel.send("考え中...")
+
+            try:
+                response_text = await send_prompt_to_llm(combined_prompt)
+            except Exception as e:
+                await thinking_message.edit(content=f"An error occurred: {e}")
+                return
+
+            await thinking_message.edit(content=response_text)
+
 async def setup(bot):
     await bot.add_cog(MentionCog(bot))
