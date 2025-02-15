@@ -11,10 +11,14 @@ class MentionCog(commands.Cog):
         if message.author == self.bot.user:
             return
 
-        if self.bot.user.mentioned_in(message):
+        if f"<@{self.bot.user.id}>" in message.content:
             prompt = message.content.replace(f"<@{self.bot.user.id}>", "").strip()
             if not prompt:
                 return
+
+            if message.reference:
+                referenced_message = await message.channel.fetch_message(message.reference.message_id)
+                prompt = f"{referenced_message.content}\n\n{prompt}"
 
             thinking_message = await message.channel.send("考え中...")
 
