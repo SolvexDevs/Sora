@@ -10,7 +10,7 @@ async def send_prompt_to_llm(prompt: str) -> str:
         "messages": [
             {
                 "role": "system",
-                "content": "あなたはSoraという優秀な日本語アシスタントです。"
+                "content": "あなたはSoraという優秀な日本語アシスタントです。硬すぎる敬語は使用しないでください。"
             },
             {
                 "role": "user",
