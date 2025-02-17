@@ -1,6 +1,6 @@
 import aiohttp
 
-API_SERVER_URL = "http://192.168.1.7:11434/api/chat"
+API_SERVER_URL = "http://192.168.1.9:11434/api/chat"
 
 async def send_prompt_to_llm(prompt: str) -> str:
     headers = {"Content-Type": "application/json"}
