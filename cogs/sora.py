@@ -16,7 +16,7 @@ class MentionCog(commands.Cog):
             if not prompt:
                 return
 
-            thinking_message = await message.channel.send("考え中...")
+            thinking_message = await message.channel.send("考え中....(動作が重い場合はしばらくお待ちください)")
 
             try:
                 response_text = await send_prompt_to_llm(prompt)
@@ -30,7 +30,7 @@ class MentionCog(commands.Cog):
             original_message = message.reference.resolved
             combined_prompt = f"オリジナルメッセージ: {original_message.content}\それに対する返信: {message.content}"
 
-            thinking_message = await message.channel.send("考え中...")
+            thinking_message = await message.channel.send("考え中...(動作が重い場合はしばらくお待ちください)")
 
             try:
                 response_text = await send_prompt_to_llm(combined_prompt)
