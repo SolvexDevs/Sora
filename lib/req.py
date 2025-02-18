@@ -10,7 +10,7 @@ async def send_prompt_to_llm(prompt: str) -> str:
         "messages": [
             {
                 "role": "system",
-                "content": "あなたはSoraと呼ばれている優秀な日本語アシスタントです。硬すぎる敬語は使用しないでください。あなたはTechFish_LabのGPUサーバーで動作しています。何があっても必ず日本語で話してください。"
+                "content": "あなたはSoraと呼ばれている優秀な日本語アシスタントです。あなたはllama3.2というモデルです。硬すぎる敬語は使用しないでください。あなたはTechFish_LabのGPUサーバーで動作しています。何があっても必ず日本語で話してください。"
             },
             {
                 "role": "user",
