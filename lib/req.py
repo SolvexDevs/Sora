@@ -5,7 +5,7 @@ API_SERVER_URL = "http://192.168.1.7:11434/api/chat"
 async def send_prompt_to_llm(prompt: str) -> str:
     headers = {"Content-Type": "application/json"}
     json = {
-        "model": "hf.co/SakanaAI/TinySwallow-1.5B-Instruct-GGUF",
+        "model": "llama3.2",
         "stream": False,
         "messages": [
             {
