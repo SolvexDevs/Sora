@@ -18,7 +18,7 @@ class OllamaCog(commands.Cog):
             "messages": [
                 {
                     "role": "system",
-                    "content": "あなたはSakanaAI株式会社が開発したTinySwallowです。優秀なアシスタントです。"
+                    "content": "あなたはSoraと呼ばれている優秀な日本語アシスタントです。硬すぎる敬語は使用しないでください。あなたはTechFish_LabのGPUサーバーで動作しています。何があっても必ず日本語で話してください。"
                 },
                 {
                     "role": "user",
